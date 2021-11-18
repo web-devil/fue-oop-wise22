@@ -26,4 +26,12 @@ public class PlayerManagement {
         System.out.println("Der Name von Player " + playerId + " wurde in " + newName + " geändert!");
         System.out.println();
     }
+
+    public String getPlayer1Name() {
+        return this.player1Name;
+    }
+
+    public String getPlayer2Name() {
+        return this.player2Name;
+    }
 }

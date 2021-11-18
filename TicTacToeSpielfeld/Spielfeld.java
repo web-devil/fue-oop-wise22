@@ -4,11 +4,13 @@ public class Spielfeld {
     private char[] fields = new char[9];
     private char currentPlayer = 'x';
     private Scanner input;
+    private PlayerManagement playerManagement;
 
     // Variablennamen dienen NUR der Lesbarkeit!
     // (Sind aber deswegen umso wichtiger)
-    Spielfeld(Scanner erhuifheriuhbirew) {
+    Spielfeld(Scanner erhuifheriuhbirew, PlayerManagement playerManagement) {
         this.input = erhuifheriuhbirew;
+        this.playerManagement = playerManagement;
 
         for(int i = 0; i <= 8; i++) {
             this.fields[i] = ' ';
@@ -16,6 +18,8 @@ public class Spielfeld {
     }
 
     public void play() {
+        System.out.println("Spieler " + this.playerManagement.getPlayer1Name() + " startet!");
+
         for(int i = 1; i <= 9; i++) {
             System.out.println("Welches Feld soll's denn sein?");
             int selectedField = this.input.nextInt() - 1;
@@ -29,7 +33,14 @@ public class Spielfeld {
             this.print();
 
             if (this.hasWon()) {
-                System.out.println("Spieler " + this.currentPlayer + " hat gewonnen!");
+                String winningPlayer;
+                if (this.currentPlayer == 'x') {
+                    winningPlayer = this.playerManagement.getPlayer1Name();
+                } else {
+                    winningPlayer = this.playerManagement.getPlayer2Name();
+                }
+
+                System.out.println("Spieler " + winningPlayer + " hat gewonnen!");
                 System.out.println();
                 break; // continue NICHT, aber return, i=10
             }
