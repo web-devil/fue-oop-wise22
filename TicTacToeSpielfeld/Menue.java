@@ -3,10 +3,12 @@ import java.util.Scanner;
 class Menue {
     private Scanner scanner;
     private Spielfeld spielfeld;
+    private PlayerManagement playerManagement;
 
-    public Menue(Scanner scanner, Spielfeld spielfeld) {
+    public Menue(Scanner scanner, Spielfeld spielfeld, PlayerManagement playerManagement) {
         this.scanner = scanner;
         this.spielfeld = spielfeld;
+        this.playerManagement = playerManagement;
     }
 
     public void run() {
