@@ -30,6 +30,7 @@ public class Spielfeld {
 
             if (this.hasWon()) {
                 System.out.println("Spieler " + this.currentPlayer + " hat gewonnen!");
+                System.out.println();
                 break; // continue NICHT, aber return, i=10
             }
 
