@@ -22,6 +22,12 @@ class Menue {
                 case 1:
                    this.spielfeld.play(); 
                    break; 
+                case 2:
+                    this.playerManagement.changeName(1);
+                    break;
+                case 3: 
+                    this.playerManagement.changeName(2);
+                    break;
                 case 9:
                     System.out.println();    
                     System.out.println("Goodbye!");
