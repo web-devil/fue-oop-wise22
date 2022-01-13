@@ -13,7 +13,7 @@ class Menue {
 
     public void run() {
         System.out.println();
-        System.out.println("Willkommen bei TicTacToe");
+        System.out.println("Willkommen bei TicTacToe!");
         System.out.println();
 
         while(true) {
@@ -30,6 +30,12 @@ class Menue {
                 case 3: 
                     this.playerManagement.changeName(2);
                     break;
+                case 4:
+                    System.out.println();
+                    System.out.println(this.playerManagement.getPlayer1Name());
+                    System.out.println(this.playerManagement.getPlayer2Name());
+                    System.out.println();
+                    break;
                 case 9:
                     System.out.println();    
                     System.out.println("Goodbye!");
@@ -40,7 +46,7 @@ class Menue {
     }
 
     private void print() {
-        System.out.println("Herzlich Willkommen zu TicTacToe!");
+        System.out.println("Hauptmenü von TicTacToe!");
         System.out.println();
         System.out.println("-   Neues Spiel starten (1)");
         System.out.println("-   Player 1 Namen eingeben (2)");
