@@ -11,7 +11,9 @@ public class Spielfeld {
     Spielfeld(Scanner erhuifheriuhbirew, PlayerManagement playerManagement) {
         this.input = erhuifheriuhbirew;
         this.playerManagement = playerManagement;
+    }
 
+    private void resetSpielfeld() {
         for(int i = 0; i <= 8; i++) {
             this.fields[i] = ' ';
         }
@@ -19,6 +21,7 @@ public class Spielfeld {
 
     public void play() {
         System.out.println("Spieler " + this.playerManagement.getPlayer1Name() + " startet!");
+        this.resetSpielfeld();
 
         for(int i = 1; i <= 9; i++) {
             System.out.println("Welches Feld soll's denn sein?");

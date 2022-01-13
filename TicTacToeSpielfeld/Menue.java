@@ -31,10 +31,7 @@ class Menue {
                     this.playerManagement.changeName(2);
                     break;
                 case 4:
-                    System.out.println();
-                    System.out.println(this.playerManagement.getPlayer1Name());
-                    System.out.println(this.playerManagement.getPlayer2Name());
-                    System.out.println();
+                    this.scoreboard.execute();
                     break;
                 case 9:
                     System.out.println();    
