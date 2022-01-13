@@ -36,7 +36,7 @@ public class Word2GuessFrame {
         JTextField wort2GuessTextfield = new JTextField();
 
         JButton button = new JButton("Wort festlegen");
-        button.addActionListener(new ButtonActionListener(label, guessingFrame));
+        button.addActionListener(new ButtonActionListener(wort2GuessTextfield, guessingFrame));
 
         frame.add(label, BorderLayout.NORTH);
         frame.add(wort2GuessTextfield, BorderLayout.CENTER);

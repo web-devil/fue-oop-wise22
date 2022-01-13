@@ -16,13 +16,18 @@ public class GuessingFrame {
     private static final int WINDOW_WIDTH = 200;
     private static final int WINDOW_HEIGHT = 200;
 
+    JLabel label;
+
+    public GuessingFrame() {
+        this.label = new JLabel("noch kein Wort\nzum Raten gesetzt", SwingConstants.CENTER);
+    }
+
     public void draw() {
         JFrame frame = new JFrame("Hangman: Raten");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         frame.setLayout(new BorderLayout());  
 
-        JLabel label = new JLabel("_ _ _ _ _ _ _ _ _ _ _ ", SwingConstants.CENTER);
         label.setFont(new Font("Serif", Font.BOLD, 22));
         label.setOpaque(true);
         label.setPreferredSize(new Dimension(100, 80));
@@ -39,7 +44,12 @@ public class GuessingFrame {
     }
 
     public void setWord2Guess(String word) {
-        System.out.println("Das hier muss noch implementiert werden ... ");
-        // label change, transform 'word' into _ _ _ ... 
+        String newLabelValue = "";
+
+        for (int i = 1; i <= word.length(); i++) {
+            newLabelValue += "_ ";
+        }
+
+        this.label.setText(newLabelValue);
     }
 }
