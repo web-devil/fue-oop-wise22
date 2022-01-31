@@ -35,11 +35,12 @@ public class GuessingFrame {
         JTextField wort2GuessTextfield = new JTextField();
 
         JButton button = new JButton("Wort RATEN");
-        // button.addActionListener(new ButtonActionListener(label, this.guessing));
+        button.addActionListener(new GuessWordButtonListener());
 
         frame.add(label, BorderLayout.NORTH);
         frame.add(wort2GuessTextfield, BorderLayout.CENTER);
         frame.add(button, BorderLayout.SOUTH);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
