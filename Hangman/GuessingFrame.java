@@ -16,10 +16,10 @@ public class GuessingFrame {
     private static final int WINDOW_WIDTH = 200;
     private static final int WINDOW_HEIGHT = 200;
 
-    JLabel label;
-
+    private HangmanLabel label;
+    
     public GuessingFrame() {
-        this.label = new JLabel("noch kein Wort\nzum Raten gesetzt", SwingConstants.CENTER);
+        this.label = new HangmanLabel();
     }
 
     public void draw() {
@@ -35,7 +35,7 @@ public class GuessingFrame {
         JTextField wort2GuessTextfield = new JTextField();
 
         JButton button = new JButton("Wort RATEN");
-        button.addActionListener(new GuessWordButtonListener());
+        button.addActionListener(new GuessWordButtonListener(label, wort2GuessTextfield));
 
         frame.add(label, BorderLayout.NORTH);
         frame.add(wort2GuessTextfield, BorderLayout.CENTER);
@@ -45,12 +45,6 @@ public class GuessingFrame {
     }
 
     public void setWord2Guess(String word) {
-        String newLabelValue = "";
-
-        for (int i = 1; i <= word.length(); i++) {
-            newLabelValue += "_ ";
-        }
-
-        this.label.setText(newLabelValue);
+        this.label.setText(word);
     }
 }
