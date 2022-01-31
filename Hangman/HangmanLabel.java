@@ -26,10 +26,10 @@ public class HangmanLabel extends JLabel {
 
         for (int i = 0; i < word2Guess.length(); i++) {
             if (word2Guess.charAt(i) == text.charAt(0)) {
-                newLabelValue += text.charAt(0) + " ";    
+                newLabelValue += text.charAt(0) + " ";
             } else {
-                newLabelValue += "_ ";
-            }            
+                newLabelValue += this.getText().charAt(i*2) + this.getText().charAt(i*2+1);
+            }
         }
 
         super.setText(newLabelValue);
