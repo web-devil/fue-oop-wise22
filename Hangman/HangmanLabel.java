@@ -28,6 +28,7 @@ public class HangmanLabel extends JLabel {
             if (word2Guess.charAt(i) == text.charAt(0)) {
                 newLabelValue += text.charAt(0) + " ";
             } else {
+                newLabelValue = newLabelValue + this.getText().charAt(i*2) + this.getText().charAt(i*2+1);
                 newLabelValue += this.getText().charAt(i*2) + this.getText().charAt(i*2+1);
             }
         }
